@@ -1,8 +1,8 @@
 'use strict';
 angular.module('apb').controller('MainController', ['$scope','$log','$window','$http', '$location',
 	function($scope,$log,$window,$http,$location){
-		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; //https://apb.mybluemix.net/api
-		var wsUrl ="wss://sos.au-syd.mybluemix.net"; //"wss://apb.mybluemix.net"
+		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; 
+		var wsUrl ="wss://sos.au-syd.mybluemix.net"; 
 		//apiUrl ="http://localhost:8080/api";
 		//wsUrl ="ws://localhost:8080";
 		

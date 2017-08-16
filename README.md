@@ -1,14 +1,14 @@
-# APB
-All Point Bulletin
-
-**Vision**
-Being in a position of an emergency needing police or help does not always fit with the 111 emergency calling system. Sometimes there are dire need but no possibility of talking. It could be that the person in need is scared to talk as can be heard, or simply can not talk or no time to give details etc needed by the calling system.
-We would like to create an application that sends a notification to police system that an emergency call out is needed. The application will send position of the person in need and track that person to where ever he goes until emergency arrives.
 
 
-**Rest API Documentation**
-https://github.com/kedarkrishnan/apb/wiki
+SOS is an application that can be used in emergencies. 
 
+It was first designed as an all points bulletin for a medical help and now extending it to be more efficient and secure.
+Its purpose is to be able to connect to a control centre that uses google map in time of emergency and track location of patients untill help arrives.
+An android app that connects to the control centre  can be used by medics or responders so they also see location and important information of caller also.
+The conrol centre can see location of both callers and respnders,(patients and medics).
+Also instantly when the patient presses the button for help their important medical information gets sent to the control centre so they can assign most suitable medics.
+
+This system uses:
 
 **Tech Stack**
 * Spring Boot

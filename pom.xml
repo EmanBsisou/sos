@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>compile</scope>
+			<scope>compileOnly</scope>
 		</dependency>
 	</dependencies>
 	<build>

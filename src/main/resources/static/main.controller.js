@@ -1,5 +1,5 @@
 'use strict';
-angular.module('apb').controller('MainController', ['$scope','$log','$window','$http', '$location',
+angular.module('sos').controller('MainController', ['$scope','$log','$window','$http', '$location',
 	function($scope,$log,$window,$http,$location){
 		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; 
 		var wsUrl ="wss://sos.au-syd.mybluemix.net"; 

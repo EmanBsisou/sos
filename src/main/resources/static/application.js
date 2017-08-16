@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('apb',['ngRoute','mgcrea.ngStrap']);
+var app = angular.module('sos',['ngRoute','mgcrea.ngStrap']);
 
 app.config(['$httpProvider','$logProvider','$routeProvider',
 	function($httpProvider,$logProvider,$routeProvider) {

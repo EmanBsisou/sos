@@ -1,4 +1,4 @@
-package co.nz.apb.controllers;
+package sos.controllers;
 
 
 import org.slf4j.Logger;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.nz.apb.domain.User;
-import co.nz.apb.services.UserService;
+import sos.domain.User;
+import sos.services.UserService;
 
 @RestController
 @RequestMapping("/api/user")

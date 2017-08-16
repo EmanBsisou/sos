@@ -1,6 +1,6 @@
-package co.nz.apb.services;
+package sos.services;
 
-import co.nz.apb.domain.Responser;
+import sos.domain.Responser;
 
 public interface ResponserService {
 

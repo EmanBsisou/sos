@@ -1,4 +1,4 @@
-package co.nz.apb.domain;
+package sos.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

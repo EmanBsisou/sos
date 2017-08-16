@@ -1,8 +1,8 @@
-package co.nz.apb.repository;
+package sos.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import co.nz.apb.domain.Responser;
+import sos.domain.Responser;
 
 public interface ResponserRepository extends CrudRepository<Responser,String>{
 

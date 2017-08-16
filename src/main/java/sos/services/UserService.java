@@ -1,6 +1,6 @@
-package co.nz.apb.services;
+package sos.services;
 
-import co.nz.apb.domain.User;
+import sos.domain.User;
 
 public interface UserService {
 

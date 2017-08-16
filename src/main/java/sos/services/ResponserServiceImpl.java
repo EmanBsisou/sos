@@ -1,11 +1,12 @@
-package co.nz.apb.services;
+
+package sos.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import co.nz.apb.domain.Responser;
-import co.nz.apb.repository.ResponserRepository;
+import sos.domain.Responser;
+import sos.repository.ResponserRepository;
 
 @Component
 public class ResponserServiceImpl implements ResponserService{

@@ -1,4 +1,4 @@
-package co.nz.apb.controllers;
+package sos.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.nz.apb.ws.GeoLocationHandler;
+import sos.ws.GeoLocationHandler;
 
 @RestController
 @RequestMapping("/api/geolocation")

@@ -1,8 +1,8 @@
-package co.nz.apb.repository;
+package sos.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import co.nz.apb.domain.User;
+import sos.domain.User;
 
 public interface UserRepository extends CrudRepository<User,String>{
 

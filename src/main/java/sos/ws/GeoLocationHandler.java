@@ -1,4 +1,4 @@
-package co.nz.apb.ws;
+package sos.ws;
 
 import java.io.IOException;
 import java.util.HashMap;

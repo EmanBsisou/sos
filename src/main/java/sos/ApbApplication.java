@@ -1,4 +1,4 @@
-package co.nz.apb;
+package sos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +14,7 @@ public class ApbApplication {
 	}
 	
 	@GetMapping("/api")
-	public String apbApi(){
-		return "APB rest API";
+	public String sosApi(){
+		return "SOS rest API";
 	}
 }

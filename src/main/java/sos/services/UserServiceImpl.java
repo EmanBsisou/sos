@@ -1,11 +1,11 @@
-package co.nz.apb.services;
+package sos.services;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import co.nz.apb.domain.User;
-import co.nz.apb.repository.UserRepository;
+import sos.domain.User;
+import sos.repository.UserRepository;
 
 @Component
 public class UserServiceImpl implements UserService{

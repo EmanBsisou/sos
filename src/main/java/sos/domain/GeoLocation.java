@@ -1,4 +1,4 @@
-package co.nz.apb.domain;
+package sos.domain;
 
 public class GeoLocation {
 

@@ -1,4 +1,4 @@
-package co.nz.apb.config;
+package sos.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -6,7 +6,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 
-import co.nz.apb.ws.GeoLocationHandler;
+import sos.ws.GeoLocationHandler;
 
 @Configuration
 @EnableWebSocket

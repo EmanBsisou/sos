@@ -13,9 +13,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import co.nz.apb.controllers.UserController;
-import co.nz.apb.domain.User;
-import co.nz.apb.services.UserService;
+import sos.controllers.UserController;
+import sos.domain.User;
+import sos.services.UserService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)

@@ -1,4 +1,4 @@
-package co.nz.apb.domain;
+package sos.domain;
 
 import java.util.Set;
 

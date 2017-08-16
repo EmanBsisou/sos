@@ -3,11 +3,11 @@ declared-services:
     label: cleardb
     plan: spark
 applications:
-- name: apb
+- name: sos
   memory: 512M
   instances: 1
-  host: apb-${random-word}
+  host: sos-${random-word}
   buildpack: java_buildpack
-  path: ./target/apb-0.0.1-SNAPSHOT.jar
+  path: ./target/sos-0.0.1-SNAPSHOT.jar
   services:
     - apb-mysql

@@ -39,7 +39,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
         };
 			
 		var mapOptions = {
-		        zoom: 17,
+		        zoom: 13,
 		        center: new google.maps.LatLng(-36.880774,174.7055693),
 		        mapTypeId: google.maps.MapTypeId.ROADMAP,
 		        zoomControl: true,

@@ -14,6 +14,12 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.when('/download',{
 			templateUrl: 'download.html'
 		})
+			.when('/login',{
+			templateUrl: 'login.html'
+		})
+				.when('/index',{
+			templateUrl: 'index.html'
+		})
 		.otherwise({
 		    redirectTo: '/'
 		});

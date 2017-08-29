@@ -13,6 +13,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
         $scope.markers = [];
         $scope.alertList = [];
         $scope.responserList = [];
+
         
         var infoWindow = new google.maps.InfoWindow();
 	    var assignTo = [];

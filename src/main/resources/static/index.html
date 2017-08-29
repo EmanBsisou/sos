@@ -7,13 +7,14 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/sos.css">    
 		<style type="text/css">
-		[ng\:cloak], [ng-cloak], .ng-cloak {
+		[ng\:cloak], [ng-cloak], .ng-cloak {   <!-- The "ng-cloak" class is applied to the content <div> so that dynamic content is hidden until Angular JS has had a chance to process it (this prevents "flickering" during the initial page load) -->
 		  display: none !important;
 		}
 		</style>		
     </head>
     <body ng-app="sos" data-ng-controller="MainController">
         <div class="container-fluid">
+		<div ng-controller="home" ng-cloak class="ng-cloak">
             <div class="row">
                 <div class="text-center map col-md-12" id="map" ng-style="{height: winHeight}">                
                 </div>
@@ -38,6 +39,7 @@
                             <p class="list-group-item-text" data-ng-if="marker.info.assignTo"><small>
                             Assigned To: <span data-ng-bind="marker.info.assignTo.info.userId"></span></small>
                         </p>
+						</div>
                         </div>
                     </div>       
                 </div>               

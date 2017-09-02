@@ -20,6 +20,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 			controller: 'navigation',
 			controllerAs: 'controller'
 		})
+
 		.otherwise({
 		    redirectTo: '/'
 		});
@@ -35,3 +36,4 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
   })
   .controller('navigation', function() {});
 
+	  

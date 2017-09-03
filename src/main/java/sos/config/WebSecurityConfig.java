@@ -28,9 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-	http
-	.csrf().disable();
-	}
+	    http.csrf().disable().cors().disable().httpBasic().and().authorizeRequests()
+	    .anyRequest().authenticated();}
 	
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

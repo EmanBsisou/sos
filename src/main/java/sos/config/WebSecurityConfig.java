@@ -28,7 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-	    http.csrf().disable();/*.cors().disable().httpBasic().and().authorizeRequests()
+	    http
+	    .csrf().disable().cors().disable().httpBasic().and().authorizeRequests();/*
 	    .anyRequest().authenticated();*///leave till later as this disables GET too and then wont be able to open mobile app
 	}
 	

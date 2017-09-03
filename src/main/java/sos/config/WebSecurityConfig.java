@@ -10,9 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-  /*  @Override
+   @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
+        http.csrf().disable().cors().disable()
             .authorizeRequests()
                 .antMatchers("/", "/login").permitAll()
                 .anyRequest().authenticated()
@@ -22,14 +22,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .logout()
-                .permitAll();
+                .permitAll()
+        ;
     }
-*/
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-	    http.csrf().disable().cors().disable().httpBasic().and().authorizeRequests()
-	    .anyRequest().authenticated();}
+
+	
 	
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

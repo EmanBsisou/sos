@@ -3,9 +3,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	function($scope,$log,$window,$http,$location){
 		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; 
 		var wsUrl ="wss://sos.au-syd.mybluemix.net"; 
-		//apiUrl ="http://localhost:8080/api";
-		//wsUrl ="ws://localhost:8080";
-		
+
 		$log.debug('mainController');		
 		$scope.winHeight = $window.innerHeight + "px";
 		$scope.alertListBGC = '#ff3300';

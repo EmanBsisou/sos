@@ -25,7 +25,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		    redirectTo: '/'
 		});
 		
-    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+   // $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 	}
 ])
  .controller('index', function($http) {

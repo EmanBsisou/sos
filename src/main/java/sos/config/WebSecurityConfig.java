@@ -41,8 +41,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .loginPage("/login")
         .loginProcessingUrl("/loginprocess")
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
-        .permitAll().and()
-        .rememberMe().rememberMeServices(tokenBasedRememberMeService);
+        .permitAll();/*.and()
+        .rememberMe().rememberMeServices(tokenBasedRememberMeService);*/
 	}
 	
 	/*

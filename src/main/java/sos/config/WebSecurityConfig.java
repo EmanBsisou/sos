@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.RememberMeAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -21,8 +22,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired private UserServiceImpl userDetailsServiceImpl;
-	//@Autowired private CustomTokenBasedRememberMeService tokenBasedRememberMeService;
-	//@Autowired private RememberMeAuthenticationProvider rememberMeAuthenticationProvider;
+	@Autowired private CustomTokenBasedRememberMeService tokenBasedRememberMeService;
+	@Autowired private RememberMeAuthenticationProvider rememberMeAuthenticationProvider;
 
 
 
@@ -34,13 +35,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
 	    .csrf().disable().cors().disable().httpBasic()
 	    .and().authorizeRequests()
-	    .antMatchers("/","/api/user/{userId}").permitAll().anyRequest().authenticated()
+	    .antMatchers("/","/api/user/{userId}").permitAll()/*.anyRequest().authenticated()*/
         .and()///added 6/9 from here
         .formLogin()
         .loginPage("/login")
         .loginProcessingUrl("/loginprocess")
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
-        .permitAll();
+        .permitAll().and()
+        .rememberMe().rememberMeServices(tokenBasedRememberMeService);
 	}
 	
 	/*
@@ -58,7 +60,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     ///added 6/9
  
-	 
+   /* protected void registerAuthentication(AuthenticationManagerBuilder auth) throws Exception {
+		 auth 
+		 	//.userDetailsService(userDetailsServiceImpl)
+		    .userDetailsService(userDetailsServiceImpl)
+		 	.passwordEncoder(bCryptPasswordEncoder());
+		 auth.authenticationProvider(rememberMeAuthenticationProvider);
+	 }
+    */
 	 @Bean @Override public AuthenticationManager authenticationManagerBean() throws Exception {
 		 return super.authenticationManagerBean();
 	 }

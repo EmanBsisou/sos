@@ -28,12 +28,12 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
     $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 	}
 ])
- // .controller('index', function($http) {
-   // var self = this;
-   // $http.get('/{userId}/').then(function(response) {
-     // self.userId = response.data;
-   // })
-  //})
- // .controller('navigation', function() {});
+ controller('index', function($http) {
+    var self = this;
+    $http.get('/{userId}/').then(function(response) {
+      self.userId = response.data;
+    })
+  })
+ .controller('navigation', function() {});
 
 	  

@@ -21,7 +21,7 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private String tokenKey = "some token goes here";
 	
-	@Autowired private UserServiceImpl userDetailsServiceImpl;
+	//@Autowired private UserServiceImpl userDetailsServiceImpl;
 
 	@Override protected void configure(HttpSecurity http) throws Exception {
         http

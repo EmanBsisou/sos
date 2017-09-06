@@ -23,23 +23,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired private UserServiceImpl userDetailsServiceImpl;
 	//@Autowired private CustomTokenBasedRememberMeService tokenBasedRememberMeService;
 	//@Autowired private RememberMeAuthenticationProvider rememberMeAuthenticationProvider;
-	@Override protected void configure(HttpSecurity http) throws Exception {
-        http
-        	.csrf()
-        		.disable()
-        		.authorizeRequests()
-        		.antMatchers("/","/api/user/{userId}").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin()
-                .loginPage("/")
-                .loginProcessingUrl("/loginprocess")
-                .failureUrl("/mobile/app/sign-in?loginFailure=true")
-                .permitAll();
-              //  .and().rememberMe().rememberMeServices(tokenBasedRememberMeService);
-    }
 
-/*
+
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	    http
@@ -48,14 +34,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
 	    .csrf().disable().cors().disable().httpBasic()
 	    .and().authorizeRequests()
-	    .antMatchers("/api/user/{userId}").permitAll().anyRequest().authenticated()
+	    .antMatchers("/","/api/user/{userId}").permitAll().anyRequest().authenticated()
         .and()///added 6/9 from here
         .formLogin()
-        .loginPage("/")
+        .loginPage("/login")
         .loginProcessingUrl("/loginprocess")
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
         .permitAll();
-	}*/
+	}
 	
 	/*
 	@Autowired

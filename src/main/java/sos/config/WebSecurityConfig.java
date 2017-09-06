@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    .antMatchers("/api/user/{userId}").permitAll().anyRequest().authenticated()
         .and()///added 6/9 from here
         .formLogin()
-        .loginPage("/")
+        .loginPage("/login").permitAll()
         .loginProcessingUrl("/loginprocess")
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
         .permitAll();

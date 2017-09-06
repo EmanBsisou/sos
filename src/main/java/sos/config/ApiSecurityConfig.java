@@ -25,7 +25,7 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override protected void configure(HttpSecurity http) throws Exception {
         http
-        	.antMatcher("/api/user/{userId}")//api/**
+        	.antMatcher("/api/**")//api/**  /user/{userId}
         	.csrf()
         		.disable()
             .authorizeRequests().anyRequest().authenticated().and()/*
@@ -34,3 +34,4 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
         		.exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
     }
 }
+

@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 //import sos.services.UserServiceImpl;
 
@@ -25,9 +26,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	//@Autowired private CustomTokenBasedRememberMeService tokenBasedRememberMeService;
 	//@Autowired private RememberMeAuthenticationProvider rememberMeAuthenticationProvider;
 
-
-
 	@Override
+	  protected void configure(HttpSecurity http) throws Exception {
+	    http
+	      .httpBasic().and()
+	      .authorizeRequests()
+	        .antMatchers("/index.html", "/login.html", "/").permitAll().anyRequest()
+	        .authenticated().and()
+	      .csrf()
+	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+	  }
+
+/*	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	    http
         .sessionManagement()
@@ -35,15 +45,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
 	    .csrf().disable().cors().disable().httpBasic()
 	    .and().authorizeRequests()
-	    .antMatchers("/"/*,"/api/user/{userId}"*/).permitAll().anyRequest().authenticated()
+	    .antMatchers("/","/api/user/{userId}").permitAll().anyRequest().authenticated()
         .and()///added 6/9 from here
         .formLogin()
         .loginPage("/login")
         .loginProcessingUrl("/loginprocess")
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
-        .permitAll();/*.and()
-        .rememberMe().rememberMeServices(tokenBasedRememberMeService);*/
-	}
+        .permitAll();
+	   // .and() .rememberMe().rememberMeServices(tokenBasedRememberMeService);
+	}*/
 	
 	/*
 	@Autowired

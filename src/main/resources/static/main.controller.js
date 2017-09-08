@@ -1,7 +1,7 @@
 'use strict';
 angular.module('sos').controller('MainController', ['$scope','$log','$window','$http', '$location',
 	function($scope,$log,$window,$http,$location){
-		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; 
+		var apiUrl ="http://sos.au-syd.mybluemix.net/api"; //removed s from http
 		var wsUrl ="wss://sos.au-syd.mybluemix.net"; 
 
 		$log.debug('mainController');		

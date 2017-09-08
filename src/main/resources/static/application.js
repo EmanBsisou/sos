@@ -28,6 +28,8 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
     $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 	}
 ])
+
+
  .controller('index', function($http) {
     var self = this;
     $http.get('/api/{userId}/').then(function(response) {
@@ -79,3 +81,18 @@ self.logout = function() {
   });
 }
 	  
+	  
+	  /*.controller('index', function($http) {
+  var self = this;
+  $http.get('token').then(function(response) {
+    $http({
+      url : 'http://localhost:9000',
+      method : 'GET',
+      headers : {
+        'X-Auth-Token' : response.data.token
+      }
+    }).then(function(response) {
+      self.user = response.data;
+    });
+  })
+});*/

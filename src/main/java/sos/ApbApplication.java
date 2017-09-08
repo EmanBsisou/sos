@@ -12,7 +12,12 @@ public class ApbApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApbApplication.class, args);
 	}
-	
+	/*added 8/9
+	 @RequestMapping("/token")
+	  public Map<String,String> token(HttpSession session) {
+	    return Collections.singletonMap("token", session.getId());
+	  }
+	*/
 	@GetMapping("/api")
 	public String sosApi(){
 		return "SOS rest API";

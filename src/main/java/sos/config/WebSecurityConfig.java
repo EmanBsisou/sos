@@ -20,14 +20,13 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @Configuration
 @EnableWebSecurity
 //@Order(2)
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	//@Autowired private UserServiceImpl userDetailsServiceImpl;
 	//@Autowired private CustomTokenBasedRememberMeService tokenBasedRememberMeService;
 	//@Autowired private RememberMeAuthenticationProvider rememberMeAuthenticationProvider;
 
-	@Override
+	/*@Override
 	  protected void configure(HttpSecurity http) throws Exception {
 	    http
 	      .httpBasic().and()
@@ -36,9 +35,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        .authenticated().and()
 	      .csrf()
 	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-	  }
+	  }*/
 
-/*	@Override
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 	    http
         .sessionManagement()
@@ -54,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .failureUrl("/mobile/app/sign-in?loginFailure=true")
         .permitAll();
 	   // .and() .rememberMe().rememberMeServices(tokenBasedRememberMeService);
-	}*/
+	}
 	
 	/*
 	@Autowired

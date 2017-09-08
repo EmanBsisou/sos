@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 
 public class ApbApplication {//added extends...
-	  @RequestMapping("/api/user")
+/*	  @RequestMapping("/api/user")
 	  public Principal user(Principal user) {
 	    return user;
-	  }
+	  }*/
 	public static void main(String[] args) {
 		SpringApplication.run(ApbApplication.class, args);
 	}

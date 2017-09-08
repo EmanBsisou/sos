@@ -16,9 +16,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+//@Order(1)
 public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
-	
+	/*
 	private String tokenKey = "some token goes here";
 	
 	//@Autowired private UserServiceImpl userDetailsServiceImpl;
@@ -28,10 +28,10 @@ public class ApiSecurityConfig extends WebSecurityConfigurerAdapter {
         	.antMatcher("/api/user/{userId}")//api/**  /user/{userId}
         	.csrf()
         		.disable()
-            .authorizeRequests().anyRequest().authenticated().and()/*
-        	.addFilterBefore(rememberMeAuthenticationFilter(), BasicAuthenticationFilter.class )*/
+            .authorizeRequests().anyRequest().authenticated().and()
+        	.addFilterBefore(rememberMeAuthenticationFilter(), BasicAuthenticationFilter.class )
         		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         		.exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
-    }
+    }*/
 }
 

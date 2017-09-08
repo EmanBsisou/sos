@@ -15,9 +15,9 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.3.RELEASE</version><!-- changed to 1.5.6 -->
 		<relativePath /> <!-- lookup parent from repository -->
-	</parent>
+	  </parent>
 
-	<properties>
+	  <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
@@ -29,63 +29,63 @@
 		<!-- end::versions[] -->
 		<jasmine.version>2.0.0</jasmine.version>
 		
-	</properties>
+	   </properties>
 
-	<dependencies>
-		<dependency>
+	 <dependencies>
+		 <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+		  </dependency>
 
-		<dependency>
+		  <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
+		   </dependency>
+		   <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
+		   </dependency>
+		   <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-		<dependency>
+		    </dependency>
+		    <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-spring-service-connector</artifactId>
-		</dependency>
-		<dependency>
+		    </dependency>
+		    <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-localconfig-connector</artifactId>
-		</dependency>
-		<dependency>
+		    </dependency>
+		    <dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-cloudfoundry-connector</artifactId>
-		</dependency>
-		<dependency>
+		    </dependency>
+		   <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
+		    </dependency>
+		    <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
-		</dependency>
-		<dependency>
+		    </dependency>
+		    <dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>compile</scope>
-		</dependency>
-		<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-security</artifactId>
-  </dependency>
+		    </dependency>
+		    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            </dependency>
   
-<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-data-redis</artifactId>
-</dependency>
+            <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            </dependency>
 		       <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
@@ -95,27 +95,27 @@
                     <groupId>org.eclipse.jetty.orbit</groupId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
+            </dependency>
+            <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
-        <dependency>
-    <groupId>org.apache.tomcat.embed</groupId>
-    <artifactId>tomcat-embed-jasper</artifactId>
-    <scope>provided</scope>
-</dependency>  
-        <dependency>
+           </dependency>
+           <dependency>
+           <groupId>org.apache.tomcat.embed</groupId>
+           <artifactId>tomcat-embed-jasper</artifactId>
+           <scope>provided</scope>
+           </dependency>  
+           <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>  
-        <dependency>
+          </dependency>  
+          <dependency>
  			 <groupId>org.springframework.security.oauth</groupId>
   			<artifactId>spring-security-oauth2</artifactId>
   			</dependency>  
-	</dependencies>
-	<build>
-	    <resources>
+  </dependencies>
+  <build>
+	<resources>
       <resource>
         <directory>${project.basedir}/src/main/resources</directory>
       </resource>
@@ -123,7 +123,7 @@
         <directory>${project.build.directory}/generated-resources</directory>
       </resource>
     </resources>
-		<plugins>
+  <plugins>
 		<plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
@@ -137,7 +137,7 @@
             </goals>
             <configuration>
               <outputDirectory>${basedir}/target/wro</outputDirectory>
-              <resources>
+            <resources>
                 <resource>
                   <directory>src/main/wro</directory>
                   <filtering>true</filtering>
@@ -146,31 +146,31 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-			<plugin>
+       </plugin>
+	   <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-      <groupId>ro.isdc.wro4j</groupId>
-      <artifactId>wro4j-maven-plugin</artifactId>
-      <version>1.8.0</version>
-     <executions>
-        <execution>
-          <phase>generate-resources</phase>
-          <goals>
-            <goal>run</goal>
-          </goals>
-        </execution>
-      </executions> 
-      <configuration>
-        <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-        <cssDestinationFolder>${project.build.directory}/generated-resources/static/css</cssDestinationFolder>
-        <jsDestinationFolder>${project.build.directory}/generated-resources/static/js</jsDestinationFolder>
-        <wroFile>${project.build.directory}/wro/wro.xml</wroFile>
-        <extraConfigFile>${project.build.directory}/wro/wro.properties</extraConfigFile>
-        <contextFolder>${project.build.directory}/wro</contextFolder>
-      </configuration>
+	    </plugin>
+		<plugin>
+      		<groupId>ro.isdc.wro4j</groupId>
+    	    <artifactId>wro4j-maven-plugin</artifactId>
+      		<version>1.8.0</version>
+    		<executions>
+       		 <execution>
+        	  <phase>generate-resources</phase>
+         	 <goals>
+           	 <goal>run</goal>
+         	 </goals>
+        		</execution>
+      		</executions> 
+      		<configuration>
+      		  <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+      		  <cssDestinationFolder>${project.build.directory}/generated-resources/static/css</cssDestinationFolder>
+        	  <jsDestinationFolder>${project.build.directory}/generated-resources/static/js</jsDestinationFolder>
+       		 <wroFile>${project.build.directory}/wro/wro.xml</wroFile>
+       		 <extraConfigFile>${project.build.directory}/wro/wro.properties</extraConfigFile>
+        	<contextFolder>${project.build.directory}/wro</contextFolder>
+     	 </configuration>
       <dependencies>
         <dependency>
           <groupId>org.webjars</groupId>
@@ -189,6 +189,6 @@
         </dependency>
       </dependencies>
     </plugin>			
-		</plugins>
-	</build>
+  </plugins>
+</build>
 </project>

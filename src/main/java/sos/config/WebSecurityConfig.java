@@ -18,8 +18,9 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @Configuration
-@EnableWebSecurity
-@Order(2)
+//@EnableWebSecurity
+//@Order(2)
+
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	//@Autowired private UserServiceImpl userDetailsServiceImpl;

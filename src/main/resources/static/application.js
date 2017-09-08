@@ -33,7 +33,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
  .controller('index', function($http) {
     var self = this;
     $http.get('/api/{userId}/').then(function(response) {
-     self.userId = response.data;
+     self.user = response.data;
     })
   })
   .controller('navigation', function($rootScope, $http, $location) {

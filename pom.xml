@@ -21,14 +21,6 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
-		
-		<!-- tag::versions[] -->
-		<angularjs.version>1.4.9</angularjs.version>
-		<bootstrap.version>3.3.7-1</bootstrap.version>
-		<jquery.version>2.2.4</jquery.version>
-		<!-- end::versions[] -->
-		<jasmine.version>2.0.0</jasmine.version>
-		
 	   </properties>
 
 	 <dependencies>
@@ -81,106 +73,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
             </dependency>
-  
-		       <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jetty</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>javax.servlet.jsp.jstl</artifactId>
-                    <groupId>org.eclipse.jetty.orbit</groupId>
-                </exclusion>
-            </exclusions>
-            </dependency>
-            <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
-           </dependency>
-           <dependency>
-           <groupId>org.apache.tomcat.embed</groupId>
-           <artifactId>tomcat-embed-jasper</artifactId>
-           <scope>provided</scope>
-           </dependency>  
-           <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-          </dependency>   
-  </dependencies>
-  <build>
-	<resources>
-      <resource>
-        <directory>${project.basedir}/src/main/resources</directory>
-      </resource>
-      <resource>
-        <directory>${project.build.directory}/generated-resources</directory>
-      </resource>
-    </resources>
-  <plugins>
-		<plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <!-- Serves *only* to filter the wro.xml so it can get an absolute
-                          path for the project -->
-            <id>copy-resources</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/target/wro</outputDirectory>
-            <resources>
-                <resource>
-                  <directory>src/main/wro</directory>
-                  <filtering>true</filtering>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-       </plugin>
-	   <plugin>
+       </dependencies>
+       
+        <build>
+          <plugins>
+             <plugin>	
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-	    </plugin>
-		<plugin>
-      		<groupId>ro.isdc.wro4j</groupId>
-    	    <artifactId>wro4j-maven-plugin</artifactId>
-      		<version>1.8.0</version>
-    		<executions>
-       		 <execution>
-        	  <phase>generate-resources</phase>
-         	 <goals>
-           	 <goal>run</goal>
-         	 </goals>
-        		</execution>
-      		</executions> 
-      		<configuration>
-      		  <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-      		  <cssDestinationFolder>${project.build.directory}/generated-resources/static/css</cssDestinationFolder>
-        	  <jsDestinationFolder>${project.build.directory}/generated-resources/static/js</jsDestinationFolder>
-       		 <wroFile>${project.build.directory}/wro/wro.xml</wroFile>
-       		 <extraConfigFile>${project.build.directory}/wro/wro.properties</extraConfigFile>
-        	<contextFolder>${project.build.directory}/wro</contextFolder>
-     	 </configuration>
-      <dependencies>
-        <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>jquery</artifactId>
-          <version>${jquery.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>angularjs</artifactId>
-          <version>${angularjs.version}</version>
-        </dependency>
-        <dependency>
-          <groupId>org.webjars</groupId>
-          <artifactId>bootstrap</artifactId>
-          <version>${bootstrap.version}</version>
-        </dependency>
-      </dependencies>
-    </plugin>			
-  </plugins>
-</build>
+				</plugin>
+      </plugins>
+    </build>
 </project>

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-
 public class ApbApplication {//added extends...
 /*	  @RequestMapping("/api/user")
 	  public Principal user(Principal user) {

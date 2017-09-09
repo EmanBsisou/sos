@@ -5,26 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link href="css/angular-bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="assets/css/sos.css">    
-	
-		<style type="text/css">
-		[ng\:cloak], [ng-cloak], .ng-cloak {   <!-- The "ng-cloak" class is applied to the content <div> so that dynamic content is hidden until Angular JS has had a chance to process it (this prevents "flickering" during the initial page load) -->
-		  display: none !important;
-		}
-		</style>		
+        <link rel="stylesheet" type="text/css" href="assets/css/sos.css">       
     </head>
     <body ng-app="sos" data-ng-controller="MainController">
-	
         <div class="container-fluid">
-		<div ng-controller="home" ng-cloak class="ng-cloak">
-		<div ng-controller="navigation as nav" class="container">
-		<ul class="nav nav-pills" role="tablist">
-			<li class="active"><a href="#/">home</a></li>
-			<li><a href="#/login">login</a></li>
-			<li ng-show="authenticated"><a href="" ng-click="nav.logout()">logout</a></li>
-		</ul>
-	</div>
             <div class="row">
                 <div class="text-center map col-md-12" id="map" ng-style="{height: winHeight}">                
                 </div>
@@ -49,7 +33,6 @@
                             <p class="list-group-item-text" data-ng-if="marker.info.assignTo"><small>
                             Assigned To: <span data-ng-bind="marker.info.assignTo.info.userId"></span></small>
                         </p>
-						</div>
                         </div>
                     </div>       
                 </div>               
@@ -62,9 +45,7 @@
         </script>
 
         <script src="application.js"></script>
-        <script src="main.controller.js"></script>   
-	
-			
+        <script src="main.controller.js"></script>         
         
         
     </body>

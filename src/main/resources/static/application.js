@@ -29,7 +29,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 	}
 ])
 
-
+/*
  .controller('index', function($http) {
     var self = this;
     $http.get('/api/{userId}/').then(function(response) {

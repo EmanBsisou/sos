@@ -7,9 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +34,7 @@ public class ApbApplication {//added extends...
 	public String sosApi(){
 		return "SOS rest API";
 	}
-
+/*
 	@Configuration
 	@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 	protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -45,10 +43,10 @@ public class ApbApplication {//added extends...
 	    http
 	      .httpBasic().and()
 	      .authorizeRequests()
-	        .antMatchers("/index.html",  "/login.html", "/").permitAll().anyRequest()
+	        .antMatchers("/index.html", "/{userId}",   "/login.html", "/").permitAll().anyRequest()
 	        .authenticated().and()
 	      .csrf()
 	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 	  }
-	}
+	}*/
 }

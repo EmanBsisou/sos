@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import sos.controllers.UserController;
 import sos.domain.User;
 import sos.services.UserService;
-/*
+
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
 @AutoConfigureMockMvc(secure = false)//otherwise tests will fail as authentication error comes up
@@ -47,4 +47,3 @@ public class UserControllerTest {
 	}
 	
 }
-*/

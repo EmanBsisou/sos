@@ -5,9 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/sos.css">       
+        <link rel="stylesheet" type="text/css" href="assets/css/sos.css">   
+		
+		<style type="text/css">
+		[ng\:cloak], [ng-cloak], .ng-cloak {
+		  display: none !important;
+		}
+		</style>	
     </head>
     <body ng-app="sos" data-ng-controller="MainController">
+		<div class="ng-cloak">  <!-- Div ng-controller was preventing as it clashes-->
+		<ul class="nav nav-pills" role="tablist">
+			<li ng-class="{active:nav.tab('home')}"><a href="#/">home</a></li>
+			<li ng-class="{active:nav.tab('navigation')}"><a href="#/login">login</a></li>
+			<li><a href="" ng-click="nav.logout()">logout</a></li>
+			
+			<li><h1>     *** SOS MEDICAL EMERGENCY SYSTEM*** </h1></li>
+		</ul>
+	</div>
         <div class="container-fluid">
             <div class="row">
                 <div class="text-center map col-md-12" id="map" ng-style="{height: winHeight}">                

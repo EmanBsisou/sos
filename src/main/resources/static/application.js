@@ -29,13 +29,14 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 	}
 ])
 
+
 /*
  .controller('index', function($http) {
     var self = this;
     $http.get('/api/{userId}/').then(function(response) {
      self.user = response.data;
     })
-  })
+  })*/
   .controller('navigation', function($rootScope, $http, $location) {
 
   var self = this

@@ -1,4 +1,4 @@
-'use strict';
+'use strict';//controls main page
 angular.module('sos').controller('MainController', ['$scope','$log','$window','$http', '$location',
 	function($scope,$log,$window,$http,$location){
 		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; //removed s from http

@@ -1,10 +1,19 @@
 'use strict';
-
+//routing, default settings....
 var app = angular.module('sos',['ngRoute','mgcrea.ngStrap']);
 
 app.config(['$httpProvider','$logProvider','$routeProvider',
 	function($httpProvider,$logProvider,$routeProvider) {
 		$logProvider.debugEnabled(true);
+		
+		
+		  $httpProvider.defaults.headers.common = {};
+		  $httpProvider.defaults.headers.post = {};
+		  $httpProvider.defaults.headers.put = {};
+		  $httpProvider.defaults.headers.patch = {};
+		
+		$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+		  
 		
 		$routeProvider
 		.when('/', {
@@ -25,7 +34,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		    redirectTo: '/'
 		});
 		
-    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+    
 	}
 ])
 

@@ -45,7 +45,7 @@ public class ApbApplication {//added extends...
 	    http
 	      .httpBasic().and()
 	      .authorizeRequests()
-	        .antMatchers("/index.html", "/home.html", "/login.html", "/").permitAll().anyRequest()
+	        .antMatchers("/index.html",  "/login.html", "/").permitAll().anyRequest()
 	        .authenticated().and()
 	      .csrf()
 	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());

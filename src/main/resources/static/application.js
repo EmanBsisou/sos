@@ -12,11 +12,11 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		  $httpProvider.defaults.headers.put = {};
 		  $httpProvider.defaults.headers.patch = {};
 		
-		//$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+		  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 		  
 		
 		$routeProvider
-		.when('/', {
+		.when('/', { //when I go to / I want to use MainController
 		    controller: 'MainController',
 		    templateUrl: 'index.html',
 			controllerAs: 'controller'
@@ -24,7 +24,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.when('/download',{
 			templateUrl: 'download.html'
 		})
-				.when('/login',{
+				.when('/login',{//when I go to /login I want to use navigation controller
 			templateUrl: 'login.html',
 			controller: 'navigation',
 			controllerAs: 'controller'
@@ -40,59 +40,15 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 
 
 /*
- .controller('index', function($http) {
+ .controller('MainController', function($http) {//the name of controller is defined inside its class 
     var self = this;
-    $http.get('/api/{userId}/').then(function(response) {
+    $http.get('/api/user/{userId}/').then(function(response) {
      self.user = response.data;
     })
   })*/
-  .controller('navigation', function($rootScope, $http, $location) {
-
-  var self = this
-
-  var authenticate = function(credentials, callback) {
-
-    var headers = credentials ? {authorization : "Basic "
-        + btoa(credentials.username + ":" + credentials.password)
-    } : {};
-
-    $http.get('user', {headers : headers}).then(function(response) {
-      if (response.data.name) {
-        $rootScope.authenticated = true;
-      } else {
-        $rootScope.authenticated = false;
-      }
-      callback && callback();
-    }, function() {
-      $rootScope.authenticated = false;
-      callback && callback();
-    });
-
-  }
-
-  authenticate();
-  self.credentials = {};
-  self.login = function() {
-      authenticate(self.credentials, function() {
-        if ($rootScope.authenticated) {
-          $location.path("/");
-          self.error = false;
-        } else {
-          $location.path("/login");
-          self.error = true;
-        }
-      });
-  };
-});
-self.logout = function() {
-  $http.post('logout', {}).finally(function() {
-    $rootScope.authenticated = false;
-    $location.path("/");
-  });
-}
+  
 	  
-	  
-	  /*.controller('index', function($http) {
+	  /*.controller('MainController', function($http) {
   var self = this;
   $http.get('token').then(function(response) {
     $http({

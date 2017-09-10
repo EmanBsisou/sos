@@ -9,11 +9,11 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 		$scope.alertListBGC = '#ff3300';
 		$scope.alertFontColor = '#ffffff';
         $scope.markers = [];
-        $scope.alertList = [];
+        $scope.alertList = [];//userlist
         $scope.responserList = [];
 
         
-        var infoWindow = new google.maps.InfoWindow();
+        var infoWindow = new google.maps.InfoWindow();//pop up window from google map api
 	    var assignTo = [];
 	    var originLocation ={} ;
 	    var destLocation = {} ; 
@@ -68,8 +68,8 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 		     }
 	
 		
-		function init(){
-			var userId = $location.search().userId ? $location.search().userId : "Admin";						
+		function init(){//initial
+			var userId = $location.search().userId ? $location.search().userId : "Admin";			//user of bluemix url			
 			var ws = new WebSocket(wsUrl + "/GeoLocationHandler");
             ws.onopen = function(){
 	            $log.info("Web Socket is connected to " + wsUrl);
@@ -87,7 +87,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 			    }
 			   
 			    $scope.$apply(function(){
-			    	 createMarker(mark);			    	 
+			    	 createMarker(mark);	//		    	 
 			    })                		   
             }                        
 		}	    

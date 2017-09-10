@@ -68,11 +68,11 @@
 			<artifactId>lombok</artifactId>
 			<scope>compile</scope>
 		    </dependency>
-		    
+		   <!--   for form log in....
 			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			</dependency>
+			</dependency> -->
 		    		    
        </dependencies>
        

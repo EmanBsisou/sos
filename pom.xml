@@ -69,7 +69,12 @@
 			<scope>compile</scope>
 		    </dependency>
 		    <!-- For cors filter-->				    	
-
+		   <dependency>
+		        <groupId>org.apache.tomcat</groupId>
+		        <artifactId>tomcat-servlet-api</artifactId>
+		        <version>7.0.21</version>
+		        <scope>provided</scope>
+		    </dependency>
 			<dependency>
 			    <groupId>javax.servlet</groupId>
 			    <artifactId>javax.servlet-api</artifactId>

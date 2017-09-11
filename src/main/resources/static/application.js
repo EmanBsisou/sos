@@ -39,6 +39,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 ])
 
 
+
 /*
  .controller('MainController', function($http) {//the name of controller is defined inside its class 
     var self = this;

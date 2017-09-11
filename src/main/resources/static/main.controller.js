@@ -38,7 +38,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
         };
 			
 		var mapOptions = {
-		        zoom: 13,
+		        zoom: 12,
 		        center: new google.maps.LatLng(-36.880774,174.7055693),
 		        mapTypeId: google.maps.MapTypeId.ROADMAP,
 		        zoomControl: true,
@@ -110,15 +110,15 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	        
 	        $scope.markers.push(marker);
 	        if(info.role === 'User'){
-	        	$scope.alertList.push(marker);
+	        	$scope.alertList.push(marker);//the patients list
 	        	console.log('alerts List',$scope.alertList);
 	        }
 	        if(info.role === 'Responser'){
-	        	$scope.responserList.push(marker);
+	        	$scope.responserList.push(marker);//the medics list
 	        	console.log('responserList',$scope.responserList);
 	        }
 
-	        google.maps.event.addListener(marker, 'click', function(){
+	        google.maps.event.addListener(marker, 'click', function(){//click on icon to display info  by pop up window
 	        	if(marker.info.role === 'Responser'){
 	        		if(!marker.userDetails){
         				getUserDetails(marker.info.userId,marker.info.role).then(function(response){

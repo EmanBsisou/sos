@@ -68,6 +68,14 @@
 			<artifactId>lombok</artifactId>
 			<scope>compile</scope>
 		    </dependency>
+		    <!-- For cors filter-->				    	
+
+			<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>javax.servlet-api</artifactId>
+			    <version>3.0.1</version>
+			    <scope>provided</scope>
+			</dependency>
 		   <!--   for form log in....
 			<dependency>
 			<groupId>org.springframework.boot</groupId>

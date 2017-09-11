@@ -22,7 +22,7 @@ public class CORSFilter implements Filter {
         response.setHeader("Access-Control-Allow-Origin", "http://localhost:9000");
         response.setHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, HEAD, OPTIONS");
-        response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, x-auth-token, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+        response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

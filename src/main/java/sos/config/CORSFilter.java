@@ -19,13 +19,14 @@ public class CORSFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse     servletResponse, FilterChain filterChain) throws IOException, ServletException {
         final HttpServletResponse response = (HttpServletResponse) servletResponse;
-        response.setHeader("Access-Control-Allow-Origin", "http://localhost:9000");
+        //response.setHeader("Access-Control-Allow-Origin", "http://localhost:9000");
+        response.setHeader("Access-Control-Allow-Origin", "http://sos.au-syd.mybluemix.net");
         response.setHeader("Access-Control-Allow-Credentials", "true");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, HEAD, OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "Origin, Accept, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
         filterChain.doFilter(servletRequest, servletResponse);
     }
-
+    
     @Override
     public void destroy() {
 

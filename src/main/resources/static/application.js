@@ -33,11 +33,14 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.otherwise({
 		    redirectTo: '/'
 		});
-		
+})
     
 	}
 ])
-
+$http({
+  method: 'GET',
+  url: '/http://sos.au-syd.mybluemix.net/',
+  headers: { Accept: 'application/json' }
 
 
 /*

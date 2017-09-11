@@ -37,11 +37,11 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
     
 	}
 ])
-$http({
+/*$http({
   method: 'GET',
   url: '/http://sos.au-syd.mybluemix.net/',
   headers: { Accept: 'application/json' }
-
+*/
 
 /*
  .controller('MainController', function($http) {//the name of controller is defined inside its class 

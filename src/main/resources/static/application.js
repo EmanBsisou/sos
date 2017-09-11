@@ -33,15 +33,16 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.otherwise({
 		    redirectTo: '/'
 		});
-})
-    
+		
 	}
 ])
-/*$http({
+
+$http({
   method: 'GET',
-  url: '/http://sos.au-syd.mybluemix.net/',
+  url: '/someUrl',
   headers: { Accept: 'application/json' }
-*/
+})
+    
 
 /*
  .controller('MainController', function($http) {//the name of controller is defined inside its class 

@@ -61,12 +61,14 @@ public class ApbApplication {//added extends...
 	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 	  }
 	}*/
-	
+	/*
 	public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		  @Override
 		  protected void configure(HttpSecurity http) throws Exception {
 		    http
-		      .httpBasic()
+		      .httpBasic().and()
+		      .authorizeRequests()
+		        .antMatchers("/index.html", "/login.html", "/").permitAll()
 		      .and()
 		      .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
 		  }
@@ -89,5 +91,5 @@ public class ApbApplication {//added extends...
 		    }
 		    filterChain.doFilter(request, response);
 		  }
-		}
+		}*/
 }

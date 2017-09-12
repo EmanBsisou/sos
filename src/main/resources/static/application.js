@@ -39,7 +39,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 
 $http({
   method: 'GET',
-  url: '/someUrl',
+  url: 'https://sos.au-syd.mybluemix.net/api',
   headers: { Accept: 'application/json' }
 })
     

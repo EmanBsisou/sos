@@ -20,7 +20,7 @@ import sos.services.UserService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
-//@AutoConfigureMockMvc(secure = false)//otherwise tests will fail as authentication error comes up
+@AutoConfigureMockMvc(secure = false)//otherwise tests will fail as authentication error comes up
 public class UserControllerTest {
 
 	@MockBean

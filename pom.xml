@@ -68,13 +68,26 @@
 			<artifactId>lombok</artifactId>
 			<scope>compile</scope>
 		    </dependency>
-		    
-		   <!--   for form log in....
+		    <dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>javax.servlet-api</artifactId>
+			    <scope>provided</scope>
+			</dependency>
+		   <!--   for form log in....-->
 			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			</dependency> -->
-		    		    
+			</dependency> 
+			<!-- for csrf fileter -->
+			<dependency>
+			<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				</dependency>
+				<!-- for security config adapter -->
+				  <dependency>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-config</artifactId>
+					</dependency>
        </dependencies>
        
         <build>

@@ -6,14 +6,14 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 	function($httpProvider,$logProvider,$routeProvider) {
 		$logProvider.debugEnabled(true);
 		
-		
+		/*
 		  $httpProvider.defaults.headers.common = {};
 		  $httpProvider.defaults.headers.post = {};
 		  $httpProvider.defaults.headers.put = {};
 		  $httpProvider.defaults.headers.patch = {};
 		
 		  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
-		  
+		  */
 		
 		$routeProvider
 		.when('/', { //when I go to / I want to use MainController
@@ -24,24 +24,24 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.when('/download',{
 			templateUrl: 'download.html'
 		})
-				.when('/login',{//when I go to /login I want to use navigation controller
+			/*	.when('/login',{//when I go to /login I want to use navigation controller
 			templateUrl: 'login.html',
 			controller: 'navigation',
 			controllerAs: 'controller'
-		})
+		})*/
 
 		.otherwise({
 		    redirectTo: '/'
-		});
-		
+		});		
 	}
 ])
 
+/*
 $http({
   method: 'GET',
   url: 'http://sos.au-syd.mybluemix.net/api',
   headers: { Accept: 'application/json' }
-})
+})*/
     
 
 /*

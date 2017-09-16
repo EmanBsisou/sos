@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import sos.controllers.UserController;
 import sos.domain.User;
+import sos.services.ResponserService;
 import sos.services.UserService;
 
 @RunWith(SpringRunner.class)
@@ -25,6 +26,9 @@ public class UserControllerTest {
 
 	@MockBean
 	UserService userService;
+	
+	@MockBean
+	ResponserService responserService;
 	
 	@Autowired
 	private MockMvc mvc;

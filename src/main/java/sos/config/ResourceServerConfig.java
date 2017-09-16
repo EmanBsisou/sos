@@ -1,12 +1,9 @@
 package sos.config;
 
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -63,9 +60,6 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	}
 	
 	/////Consider defining a bean of type 'sos.services.ResponserService' in your configuration
-
-	
-	@MockBean
 	ResponserService responserService;
 	
 }

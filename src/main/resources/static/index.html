@@ -7,12 +7,15 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/css/sos.css">   
 		
-		<style type="text/css">
-		[ng\:cloak], [ng-cloak], .ng-cloak {
-		  display: none !important;
-		}
-		</style>	
+
     </head>
+		<style>
+	[ng\:cloak], [ng-cloak], .ng-cloak {
+		display: none !important;
+	}
+
+	}
+	</style>
     <body ng-app="sos" data-ng-controller="MainController">
 		<div class="ng-cloak">  <!-- Div ng-controller was preventing as it clashes-->
 		<ul class="nav nav-pills" role="tablist">
@@ -23,6 +26,37 @@
 			<li><h1>     *** SOS MEDICAL EMERGENCY SYSTEM*** </h1></li>
 		</ul>
 	</div>
+	<!-- Login panel -->
+		<div class=" col-md-4 col-md-offset-4">
+			<div class="panel panel-default" ng-show="!user">
+				<div class="panel-heading">Google login with OAuth</div>
+				<div class="panel-body">
+					<div class="col-md-12">
+						<a class="btn btn-default" href="/google/login">Google Login</a>
+					</div>
+				</div>
+			</div>
+			<!-- End Login panel -->
+
+			<!-- Home panel. It will visible after successfull login -->
+			<div class="panel panel-default" ng-show="user">
+				<div class="panel-heading">
+					<img class="p-img" alt=""
+						ng-src="{{user.userAuthentication.details.picture}}">
+					{{user.name}}
+				</div>
+				<div class="panel-body">
+
+					<div class="col-md-12">Email :
+						{{user.userAuthentication.details.email}}</div>
+					<div class="col-md-12">
+						<a href="#" class="btn btn-default margin-top-5"
+							ng-click="logout()"> Logout </a>
+					</div>
+				</div>
+			</div>
+			<!-- End Home Panel -->
+
         <div class="container-fluid">
             <div class="row">
                 <div class="text-center map col-md-10" id="map" ng-style="{height: winHeight}">                
@@ -61,7 +95,8 @@
 
         <script src="application.js"></script>
         <script src="main.controller.js"></script>         
-        
+        <script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
         
     </body>
 </html>

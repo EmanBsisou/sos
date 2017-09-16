@@ -3,7 +3,25 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	function($scope,$log,$window,$http,$location){
 		var apiUrl ="https://sos.au-syd.mybluemix.net/api"; //removed s from http
 		var wsUrl ="wss://sos.au-syd.mybluemix.net"; 
+///////////Added googleOAuth
+var getUser = function() {
+		$http.get('/user').success(function(user) {
+			$scope.user = user;
+			console.log('Logged User : ', user);
+		}).error(function(error) {
+			$scope.resource = error;
+		});
+	};
+	getUser();
 
+	// method for logout
+	$scope.logout = function() {
+		$http.post('/logout').success(function(res) {
+			$scope.user = null;
+		}).error(function(error) {
+			console.log("Logout error : ", error);
+		});
+	};
 		$log.debug('mainController');		
 		$scope.winHeight = $window.innerHeight + "px";
 		$scope.alertListBGC = '#ff3300';

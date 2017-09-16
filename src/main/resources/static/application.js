@@ -14,8 +14,6 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		*/
 		  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 		  
-		  
-		 //$http.defaults.headers.common['Authorization'] = 'Bearer ' + access_token={accessToken};
 		
 		$routeProvider
 		.when('/', { //when I go to / I want to use MainController

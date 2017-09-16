@@ -37,9 +37,9 @@ public class UserControllerTest {
 	public void userDetailIsEmpty_When_deviceIdIsNotFound() throws Exception{
 		given(this.userService.getUserByUserId("alanRu")).willReturn(null);
 		this.mvc.perform(get("/api/user/alanRu"))
-		//.andExpect(status().isOk());
-		.andExpect(status().isUnauthorized());
-		//verify(this.userService).getUserByUserId("alanRu");		
+		.andExpect(status().isOk());
+		//.andExpect(status().isUnauthorized());
+		verify(this.userService).getUserByUserId("alanRu");		
 	}
 	
 	@Test
@@ -47,9 +47,9 @@ public class UserControllerTest {
 		User user = new User();	
 		given(this.userService.getUserByUserId("Eman2")).willReturn(user);
 		this.mvc.perform(get("/api/user/Eman2"))
-		//.andExpect(status().isOk());
-		.andExpect(status().isUnauthorized());
-		//verify(this.userService).getUserByUserId("Eman2");		
+		.andExpect(status().isOk());
+		//.andExpect(status().isUnauthorized());
+		verify(this.userService).getUserByUserId("Eman2");		
 	}
 	
 }

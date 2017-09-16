@@ -36,60 +36,10 @@ public class ApbApplication {//added extends...
 	public static void main(String[] args) {
 		SpringApplication.run(ApbApplication.class, args);
 	}
-	/*added 8/9
-	 @RequestMapping("/token")
-	  public Map<String,String> token(HttpSession session) {
-	    return Collections.singletonMap("token", session.getId());
-	  }
-	*/
+	
 	@GetMapping("/api")
 	public String sosApi(){
 		return "SOS rest API";
 	}
-/*
-	@Configuration
-	@Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
-	protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	  @Override
-	  protected void configure(HttpSecurity http) throws Exception {
-	    http
-	      .httpBasic().and()
-	      .authorizeRequests()
-	        .antMatchers("/index.html", "/{userId}",   "/login.html", "/").permitAll().anyRequest()
-	        .authenticated().and()
-	      .csrf()
-	        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-	  }
-	}*/
-	/*
-	public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-		  @Override
-		  protected void configure(HttpSecurity http) throws Exception {
-		    http
-		      .httpBasic().and()
-		      .authorizeRequests()
-		        .antMatchers("/index.html", "/GeoLocationHandler", "/login.html", "/").permitAll()
-		      .and()
-		      .addFilterAfter(new CsrfHeaderFilter(), CsrfFilter.class);
-		  }
-		}
-	public class CsrfHeaderFilter extends OncePerRequestFilter {
-		  @Override
-		  protected void doFilterInternal(HttpServletRequest request,
-		      HttpServletResponse response, FilterChain filterChain)
-		      throws ServletException, IOException {
 
-		    CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class.getName());
-		    if (csrf != null) {
-		      Cookie cookie = WebUtils.getCookie(request, "XSRF-TOKEN");
-		      String token = csrf.getToken();
-		      if (cookie==null || token!=null && !token.equals(cookie.getValue())) {
-		        cookie = new Cookie("XSRF-TOKEN", token);
-		        cookie.setPath("/");
-		        response.addCookie(cookie);
-		      }
-		    }
-		    filterChain.doFilter(request, response);
-		  }
-		}*/
 }

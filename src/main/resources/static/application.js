@@ -6,7 +6,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 	function($httpProvider,$logProvider,$routeProvider) {
 		$logProvider.debugEnabled(true);
 		
-		/*
+		/* THESE WILL STOP THE INFO WINDO OPEN AND GIVE A FAULT
 		  $httpProvider.defaults.headers.common = {};
 		  $httpProvider.defaults.headers.post = {};
 		  $httpProvider.defaults.headers.put = {};

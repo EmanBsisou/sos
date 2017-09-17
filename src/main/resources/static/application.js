@@ -12,7 +12,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		  $httpProvider.defaults.headers.put = {};
 		  $httpProvider.defaults.headers.patch = {};
 		*/
-		  $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+		 // $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 		
 		$routeProvider
 		.when('/', { //when I go to / I want to use MainController

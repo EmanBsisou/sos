@@ -24,6 +24,14 @@
 	   <!-- Added for google oauth --> <slf4j.version>1.7.5</slf4j.version>
         <logback.version>1.0.13</logback.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
+        
+        <!-- tag::versions[] -->
+		<angularjs.version>1.4.9</angularjs.version>
+		<bootstrap.version>3.3.7-1</bootstrap.version>
+		<jquery.version>2.2.4</jquery.version>
+		<!-- end::versions[] -->
+		<jasmine.version>2.0.0</jasmine.version>
+        
 	   </properties>
 
 	 <dependencies>
@@ -76,6 +84,22 @@
 			    <artifactId>javax.servlet-api</artifactId>
 			    <scope>provided</scope>
 			</dependency>
+			<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>angularjs</artifactId>
+			<version>${angularjs.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jasmine</artifactId>
+			<version>${jasmine.version}</version>
+			<scope>test</scope>
+		</dependency>
 		   <!--   for form log in....
 			<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -91,7 +115,7 @@
 					<groupId>org.springframework.security</groupId>
 					<artifactId>spring-security-config</artifactId>
 					</dependency> -->
-					<!-- For oauth2 and google 
+				<!-- For oauth2 and google 
 					 <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>

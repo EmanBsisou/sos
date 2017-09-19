@@ -1,18 +1,19 @@
 'use strict';
-//routing, default settings....
+//routing, default settings....The angular module is defined in here  [] parameter in the module definition can be used to define dependent modules
 var app = angular.module('sos',['ngRoute','mgcrea.ngStrap']);
 
 app.config(['$httpProvider','$logProvider','$routeProvider',
 	function($httpProvider,$logProvider,$routeProvider) {
 		$logProvider.debugEnabled(true);
 		
-		/* THESE WILL STOP THE INFO WINDO OPEN AND GIVE A FAULT
+		/* THESE WILL STOP THE INFO WINDO OPEN AND GIVE A FAULT//CLEAR COOKIES 
 		  $httpProvider.defaults.headers.common = {};
 		  $httpProvider.defaults.headers.post = {};
 		  $httpProvider.defaults.headers.put = {};
 		  $httpProvider.defaults.headers.patch = {};
 		*/
-		 // $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+		 $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';//not to pop up user name and password again?
+		//delete $httpProvider.defaults.headers.post['Content-type']
 		
 		$routeProvider
 		.when('/', { //when I go to / I want to use MainController
@@ -44,10 +45,12 @@ $http({
     
 
 /*
- .controller('MainController', function($http) {//the name of controller is defined inside its class 
+ .controller('MainController', function($http) {
     var self = this;
-    $http.get('/api/user/{userId}/').then(function(response) {
-     self.user = response.data;
+    $http.get('/api/geolocation').then(function(response) {
+     self.init = response.data;
+	 or self.ws.onmessage = function(response.data)
+	 
     })
   })*/
   

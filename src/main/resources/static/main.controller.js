@@ -92,7 +92,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
             }                        
 		}	    
 	    
-	    var createMarker = function (info){
+	    var createMarker = function (info){//
 	        console.log("info",info);
 
 	        if(checkWhetherUserExist(info.userId)){

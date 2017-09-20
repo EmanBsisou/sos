@@ -28,10 +28,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	       .and()
 	       .authorizeRequests()                
 	       .antMatchers(HttpMethod.GET, "/*").permitAll()
-	       .antMatchers(HttpMethod.GET, "/api/geolocation").permitAll()
+	       .antMatchers(HttpMethod.GET, "/api/geolocation/*").permitAll()
 	       .antMatchers(HttpMethod.GET, "/GeoLocationHandler").permitAll()
-	       .antMatchers(HttpMethod.GET, "/api/user").permitAll()
-	       .antMatchers(HttpMethod.GET, "/api/responser").permitAll()
+	       .antMatchers(HttpMethod.GET, "/api/user/*").permitAll()
+	       .antMatchers(HttpMethod.GET, "/api/responser/*").permitAll()
 	      // .antMatchers(HttpMethod.GET, "/api/user/{userId}").authenticated()
 	       .anyRequest().authenticated();                
 	}

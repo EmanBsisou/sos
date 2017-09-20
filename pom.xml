@@ -82,11 +82,11 @@
 		    <version>1.8</version>
 			</dependency>
 			
-		   <!--   for form log in....-->
+		   <!--   for form log in....
 			<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			</dependency> 
+			</dependency> -->
 			<!-- for csrf fileter
 			<dependency>
 			<groupId>org.springframework.security</groupId>

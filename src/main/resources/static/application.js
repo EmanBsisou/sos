@@ -12,7 +12,7 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		  $httpProvider.defaults.headers.put = {};
 		  $httpProvider.defaults.headers.patch = {};
 		*/
-		 $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';//not to pop up user name and password again?
+		 //$httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';//will stop pop up info windo too
 		//delete $httpProvider.defaults.headers.post['Content-type']
 		$routeProvider
 		.when('/', {

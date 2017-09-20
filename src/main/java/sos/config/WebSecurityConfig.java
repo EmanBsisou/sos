@@ -16,7 +16,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @Configuration
 @EnableWebSecurity
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
@@ -32,16 +31,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	       .antMatchers(HttpMethod.GET, "/api/geolocation").permitAll()
 	       .antMatchers(HttpMethod.GET, "/GeoLocationHandler").permitAll()
 	       .antMatchers(HttpMethod.GET, "/api/user/{userId}").authenticated()
-	     //  .antMatchers(HttpMethod.GET, "/report/*").authenticated()
 	       .anyRequest().authenticated();                
 	}
 
-    @Autowired
+ /*   @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .inMemoryAuthentication()
                 .withUser("user").password("passcode").roles("USER");
-    }
+    }*/
     
   
     

@@ -76,6 +76,12 @@
 			    <artifactId>javax.servlet-api</artifactId>
 			    <scope>provided</scope>
 			</dependency>
+			<dependency>
+		    <groupId>com.thetransactioncompany</groupId>
+		    <artifactId>cors-filter</artifactId>
+		    <version>1.8</version>
+			</dependency>
+			
 		   <!--   for form log in....
 			<dependency>
 			<groupId>org.springframework.boot</groupId>

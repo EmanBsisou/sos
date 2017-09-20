@@ -14,25 +14,23 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		*/
 		 $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';//not to pop up user name and password again?
 		//delete $httpProvider.defaults.headers.post['Content-type']
-		
 		$routeProvider
-		.when('/', { //when I go to / I want to use MainController
+		.when('/', {
 		    controller: 'MainController',
-		    templateUrl: 'index.html',
-			controllerAs: 'controller'
+		    templateUrl: 'index.html'
 		})
 		.when('/download',{
 			templateUrl: 'download.html'
 		})
-			/*	.when('/login',{//when I go to /login I want to use navigation controller
+		/*	.when('/login',{//when I go to /login I want to use navigation controller
 			templateUrl: 'login.html',
 			controller: 'navigation',
 			controllerAs: 'controller'
 		})*/
-
 		.otherwise({
 		    redirectTo: '/'
-		});		
+		});
+
 	}
 ])
 

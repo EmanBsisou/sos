@@ -28,10 +28,10 @@ import org.springframework.web.util.WebUtils;
 @SpringBootApplication
 @RestController
 public class ApbApplication {//added extends...
-	/*  @RequestMapping("/user")
+	  @RequestMapping("/user")
 	  public Principal user(Principal user) {
 	    return user;
-	  }*/
+	  }
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApbApplication.class, args);

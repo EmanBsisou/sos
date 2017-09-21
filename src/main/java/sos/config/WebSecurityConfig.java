@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 
@@ -35,14 +36,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	       .antMatchers(HttpMethod.GET, "/api/user/").authenticated()
 	       .anyRequest().authenticated();                
 	}
-
- /*   @Autowired
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/lib/**");
+    }
+    @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .inMemoryAuthentication()
                 .withUser("user").password("passcode").roles("USER");
-    }*/
-    
-  
-    
+    }
+
 }

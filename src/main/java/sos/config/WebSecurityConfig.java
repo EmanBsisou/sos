@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	       .antMatchers(HttpMethod.GET, "/GeoLocationHandler").permitAll()
 	    //   .antMatchers(HttpMethod.GET, "/api/user/*").permitAll()//will allow get from browser
 	       .antMatchers(HttpMethod.GET, "/api/responser/*").permitAll()
-	       .antMatchers(HttpMethod.GET, "/api/user/{userId}").authenticated()
+	       .antMatchers(HttpMethod.GET, "/api/user/").authenticated()
 	       .anyRequest().authenticated();                
 	}
 

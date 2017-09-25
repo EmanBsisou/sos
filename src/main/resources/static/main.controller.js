@@ -77,12 +77,13 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
             };            
             ws.onmessage = function(message){
                 $log.info("Message received from WebSocket");
-                var data = message.data.split(",");
+                var data = message.data.split(",");////emergencylevel
                 var mark = {
 			        userId : data[0],
 			        lat : data[1],
 			        long : data[2],
 			        role : data[3],
+				emergencylevel: data[4],//
                     status: 1
 			    }
 			   
@@ -136,7 +137,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	        	if(marker.info.role === 'User'){
 	        		//first time load user
 	        		if(!marker.userDetails){
-        				getUserDetails(marker.info.userId,marker.info.role).then(function(response){
+        				getUserDetails(marker.info.userId,marker.info.role,marker.info.emergencylevel).then(function(response){////,marker.info.score	
 	        				marker.userDetails = response;
 	        				marker.content = layoutMedicalDetails(marker);
 	        				checkResponserAssignment(marker,infoWindow);	        				
@@ -281,7 +282,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	    	markerDetails += '<h3 id="userId">'; 
 	    	if(marker.userDetails){
 	    		if(marker.info.role==='User'){
-	    			markerDetails += marker.userDetails.userName; 	    		
+	    			markerDetails += marker.userDetails.userName; 	
 	    		}else{
 	    			markerDetails += marker.userDetails.responserName; 	    		
 	    		}

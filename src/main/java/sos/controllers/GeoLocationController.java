@@ -28,19 +28,19 @@ public class GeoLocationController {
 	
 	@PostMapping("/{userId}")
 	public void tagLocation(@PathVariable String userId,
-				@RequestParam String lat,@RequestParam String lng,@RequestParam String role){
-		log.info("tagLocation - userId={} lat={} lng={} role={}",userId,lat,lng,role);
+				@RequestParam String lat,@RequestParam String lng,@RequestParam String role,@RequestParam String emergencylevel){
+		log.info("tagLocation - userId={} lat={} lng={} role={} emeregencylevel={}",userId,lat,lng,role,emergencylevel);
 		StringBuilder message = new StringBuilder(100);
-		message.append(userId).append(",").append(lat).append(",").append(lng).append(",").append(role);
+		message.append(userId).append(",").append(lat).append(",").append(lng).append(",").append(role).append(",").append(emergencylevel);
 		geoLocationHandler.updateLocation(message.toString());
 	}
 	
 	@PostMapping("/tag/{responserId}")
 	public void tagResponser(@PathVariable String responserId,@RequestParam String userId,
-				@RequestParam String lat,@RequestParam String lng){
-		log.info("tagResponser {} to userId={} lat={} lng={} ",responserId,userId,lat,lng);
+				@RequestParam String lat,@RequestParam String lng,@RequestParam String emergencylevel){
+		log.info("tagResponser {} to userId={} lat={} lng={} emeregencylevel={}",responserId,userId,lat,lng,emergencylevel);
 		StringBuilder message = new StringBuilder(100);
-		message.append(userId).append(",").append(lat).append(",").append(lng).append(",User");
+		message.append(userId).append(",").append(lat).append(",").append(lng).append(",").append(emergencylevel).append(",User");
 		geoLocationHandler.updateResponser(message.toString(),responserId);
 	}
 	

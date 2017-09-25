@@ -22,48 +22,14 @@ app.config(['$httpProvider','$logProvider','$routeProvider',
 		.when('/download',{
 			templateUrl: 'download.html'
 		})
-		/*	.when('/login',{//when I go to /login I want to use navigation controller
+		.when('/login',{//when I go to /login I want to use navigation controller
 			templateUrl: 'login.html',
 			controller: 'navigation',
 			controllerAs: 'controller'
-		})*/
+		})
 		.otherwise({
 		    redirectTo: '/'
 		});
 
 	}
 ])
-
-/*
-$http({
-  method: 'GET',
-  url: 'http://sos.au-syd.mybluemix.net/api',
-  headers: { Accept: 'application/json' }
-})*/
-    
-
-/*
- .controller('MainController', function($http) {
-    var self = this;
-    $http.get('/api/geolocation').then(function(response) {
-     self.init = response.data;
-	 or self.ws.onmessage = function(response.data)
-	 
-    })
-  })*/
-  
-	  
-	  /*.controller('MainController', function($http) {
-  var self = this;
-  $http.get('token').then(function(response) {
-    $http({
-      url : 'http://localhost:9000',
-      method : 'GET',
-      headers : {
-        'X-Auth-Token' : response.data.token
-      }
-    }).then(function(response) {
-      self.user = response.data;
-    });
-  })
-});*/

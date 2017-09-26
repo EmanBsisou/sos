@@ -104,7 +104,7 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
         	var marker = new google.maps.Marker({
 	            map: $scope.map,
 	            position: new google.maps.LatLng(info.lat, info.long),
-	            title: info.userId,
+	            title: info.userId + " Emergency " + info.emergencylevel,
 	            icon: icons[info.role].icon,
 	            info: info
 		        });	        	        	        

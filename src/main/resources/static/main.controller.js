@@ -100,11 +100,13 @@ angular.module('sos').controller('MainController', ['$scope','$log','$window','$
 	        	checkWhetherUserExist(info.userId).setMap(null);
 	        	deletePreviousMarker(info);	        	
 	        } 
-
+			
+			var xtitle= info.userId + " Emergency " + info.emergencylevel;//to include the title (infor.userId) and the emergency level
         	var marker = new google.maps.Marker({
 	            map: $scope.map,
 	            position: new google.maps.LatLng(info.lat, info.long),
-	            title: info.userId + " Emergency " + info.emergencylevel,
+				//  title: info.userId, 
+				title: xtitle,//
 	            icon: icons[info.role].icon,
 	            info: info
 		        });	        	        	        

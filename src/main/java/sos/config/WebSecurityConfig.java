@@ -32,12 +32,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	       .antMatchers(HttpMethod.GET, "/api/geolocation/*").permitAll()
 	       .antMatchers(HttpMethod.GET, "/api/geolocation/").permitAll()
 	       .antMatchers(HttpMethod.GET, "/GeoLocationHandler").permitAll()
-	       .antMatchers(HttpMethod.POST, "/api/user/").permitAll()
-	       .antMatchers(HttpMethod.POST, "/api/responser/").permitAll()
+	      // .antMatchers(HttpMethod.POST, "/api/user/").permitAll()//no I dont want full user details in browser
+	       .antMatchers(HttpMethod.POST, "/api/responser/*").permitAll()
 	       .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()//25/9
 	    //   .antMatchers(HttpMethod.GET, "/api/user/*").permitAll()//will allow get from browser
 	       .antMatchers(HttpMethod.GET, "/api/responser/*").permitAll()
-	       .antMatchers(HttpMethod.GET, "/api/user/").authenticated()
+	       //.antMatchers(HttpMethod.GET, "/api/user/").authenticated()
 	       .anyRequest().authenticated();                
 	}
     @Override
